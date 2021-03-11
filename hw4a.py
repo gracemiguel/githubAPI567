@@ -24,4 +24,3 @@ def github_repos():
     count = str(count)
     print("Repo: " + repoName + " Number of commits: " + count)
 
-github_repos()
