@@ -1,17 +1,21 @@
 import requests
 import json 
 
+def get_user_id(text):
+  return input(text)
 def github_repos():
-  user_id =input("Type github user id")
+  repos=""
+  user_id = get_user_id("Github id")
   if(type(user_id)!= str):
-    print("Invalid id")
-    raise SystemExit
+    return("Invalid id")
+  if(len(user_id) == 0 ):
+    return("No id given")
   x = requests.get(f"https://api.github.com/users/{user_id}/repos")
   get_json = x.json()
   if "message" in get_json:
     if get_json["message"] == "Not Found":
-      print("User does not exist")
-      raise SystemExit
+      return("User does not exist")
+
   for i in get_json:
     repoName = i['name']
 
@@ -22,5 +26,8 @@ def github_repos():
       if x['commit']:
         count+=1
     count = str(count)
-    print("Repo: " + repoName + " Number of commits: " + count)
+    s = "Repo: " + repoName + " Number of commits: " + count
+    repos+=s
+  
+  return repos
 
