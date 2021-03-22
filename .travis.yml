@@ -3,7 +3,7 @@ python:
   - "3.5"
 install:
   - pip._vendor.requests
-  -from pip._vendor import requests
+  -import requests
 # command to run tests
 script:
   - python -m unittest hw4_test
