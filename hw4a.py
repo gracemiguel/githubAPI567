@@ -1,6 +1,6 @@
 import pip._vendor.requests
 import json 
-import requests
+from pip._vendor import requests
 
 def get_user_id(text):
   return input(text)

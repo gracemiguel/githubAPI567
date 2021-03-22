@@ -2,7 +2,8 @@ language: python
 python:
   - "3.8"
 install:
-  -pip install requests
+  -pip._vendor.requests
+  -requests
 # command to run tests
 script:
   - python -m unittest hw4_test
