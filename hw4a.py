@@ -1,6 +1,6 @@
 import pip._vendor.requests
 import json 
-from pip._vendor import requests
+import requests
 
 def get_user_id(text):
   return input(text)
@@ -33,10 +33,5 @@ def github_repos():
     repos+=s
 
   return repos
-
-  
-
-  
-  
 
 
